@@ -1,5 +1,43 @@
-%h1 Webサイトの表示
-%h2 
-  = @board.name
-%h2 
-  = @board.description
+.container
+
+  .card
+    .card_content
+      .card_top
+        %p.card_title Brackts
+        .dropdown
+          = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
+          .dropdown-content
+            %a{:href => "#"} Edit
+            %a{:href => "#"} Delete
+      .card_description descriotionを表示
+      .card_detail
+        = image_tag 'default-avatar.png'
+
+  .card
+    .card_content
+      .card_top
+        %p.card_title Brackts
+        .dropdown
+          = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
+          .dropdown-content
+            %a{:href => "#"} Edit
+            %a{:href => "#"} Delete
+      .card_description descriotionを表示
+      .card_detail
+        = image_tag 'default-avatar.png'
+
+  .card
+    .card_content
+      .card_top
+        %p.card_title Brackts
+        .dropdown
+          = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
+          .dropdown-content
+            %a{:href => "#"} Edit
+            %a{:href => "#"} Delete
+      .card_description descriotionを表示
+      .card_detail
+        = image_tag 'default-avatar.png'
+
+  .add_card
+    %p + Add new board

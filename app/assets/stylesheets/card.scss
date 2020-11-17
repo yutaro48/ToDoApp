@@ -1,0 +1,73 @@
+@import './variables';
+$heart-size: 16px;
+$avatar-size: 32px;
+
+.card {
+  background-color: $primary-color;
+  margin: 26px 0;
+  cursor: pointer;
+  border-radius: $border-radius;
+
+  &_top {
+    display: flex;
+    justify-content: space-between;
+    
+    p.card_title {
+      height: 25px;
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    .card_dropdown {
+      width: 24px;
+      height: 6px;
+      line-height: 25px;
+    }
+  }
+
+  &_description {
+    font-size: 14px;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+    margin: 10px 0px;
+  }
+
+  &_detail {
+    padding-top: 12px;
+    cursor: pointer;
+    display: flex;
+    font-size: 10px;
+
+    img {
+      width: $avatar-size;
+      height: $avatar-size;
+      border-radius: 100%;
+      margin-right: 8px;
+    }
+  }
+
+  &_content {
+    padding: 26px 16px;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.add_card {
+  background: #FFFFFF;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: $border-radius;
+  height: 160px;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+    margin-top: 68px;
+  }
+}
