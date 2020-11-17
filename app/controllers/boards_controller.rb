@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
 
     def index
-    end
-    
+        @board = Board.first
+    end  
+
 end
