@@ -1,43 +1,19 @@
 .container
-
-  .card
-    .card_content
-      .card_top
-        %p.card_title nameを表示
-        .dropdown
-          = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
-          .dropdown-content
-            %a{:href => "#"} Edit
-            %a{:href => "#"} Delete
-      .card_description descriotionを表示
-      .card_detail
-        = image_tag 'default-avatar.png'
-
-  .card
-    .card_content
-      .card_top
-        %p.card_title nameを表示
-        .dropdown
-          = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
-          .dropdown-content
-            %a{:href => "#"} Edit
-            %a{:href => "#"} Delete
-      .card_description descriotionを表示
-      .card_detail
-        = image_tag 'default-avatar.png'
-
-  .card
-    .card_content
-      .card_top
-        %p.card_title nameを表示
-        .dropdown
-          = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
-          .dropdown-content
-            %a{:href => "#"} Edit
-            %a{:href => "#"} Delete
-      .card_description descriotionを表示
-      .card_detail
-        = image_tag 'default-avatar.png'
+  - @boards.each do |board|
+    .card
+      .card_content
+        .card_top
+          %p.card_title 
+            = board.name
+          .dropdown
+            = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
+            .dropdown-content
+              %a{:href => "#"} Edit
+              %a{:href => "#"} Delete
+        .card_description
+          = board.description
+        .card_detail
+          = image_tag 'default-avatar.png'
 
   .add_card
     %p + Add new board
