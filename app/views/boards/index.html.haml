@@ -16,5 +16,6 @@
           .card_detail
             = image_tag 'default-avatar.png'
 
-  .add_card
-    %p + Add new board
+  = link_to new_board_path do
+    .add_card
+      %p + Add new board

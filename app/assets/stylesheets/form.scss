@@ -1,0 +1,31 @@
+.form_title {
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+input {
+    &.text {
+      width: 100%;
+      margin: 8px 0px;
+      padding: 9px 8px;
+      border: none;
+      background: $primary-color;
+      border-radius: $border-radius;
+      margin-bottom: 25px;
+    }
+  }
+  
+  label {
+    font-size: 18px;
+  }
+  
+  textarea {
+    width: 100%;
+    margin: 8px 0px;
+    padding: 8px 8px;
+    min-height: 200px;
+    resize: vertical;
+    border: none;
+    background: $primary-color;
+    border-radius: $border-radius;
+  }
