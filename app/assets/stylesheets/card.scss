@@ -2,6 +2,12 @@
 $heart-size: 16px;
 $avatar-size: 32px;
 
+.board_title {
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 36px;
+}
+
 .card {
   background-color: $primary-color;
   margin: 26px 0;
@@ -34,9 +40,9 @@ $avatar-size: 32px;
 
   &_detail {
     padding-top: 12px;
-    cursor: pointer;
     display: flex;
     font-size: 10px;
+    justify-content: space-between;
 
     img {
       width: $avatar-size;
@@ -44,10 +50,39 @@ $avatar-size: 32px;
       border-radius: 100%;
       margin-right: 8px;
     }
+  
+    &_img {
+      font-size: 14px;
+      opacity: 0.2;
+      padding-top: 12px;
+
+      img {
+        width: 16px;
+        height: 15px;
+        border-radius: 1px;
+      }
+    }
   }
 
   &_content {
     padding: 26px 16px;
+  }
+
+  &_image {
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
   }
 
   &:active {
