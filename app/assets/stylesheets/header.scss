@@ -55,6 +55,17 @@ $header-padding-y: 16px;
   background-color: #F4F4F4;
 }
 
+.dropdown-content p {
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  color: $text-base-color;
+}
+
+.dropdown-content p:hover {
+  background-color: #F4F4F4;
+}
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
