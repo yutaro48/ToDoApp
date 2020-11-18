@@ -27,7 +27,12 @@ body {
   color: $text-base-color;
 }
 
+a {
+  text-decoration: none;
+  color: $text-base-color;
+}
+
 .container {
-  padding: 16px 16px;
+  padding: 16px 30px;
   width: 100%;
 }

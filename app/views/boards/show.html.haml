@@ -1,0 +1,22 @@
+.container
+  .board_title
+    = @board.name
+  .card
+    .card_image
+      = image_tag 'ToDoPhoto.png'
+    .card_content
+      .card_top
+        %p.card_title 
+          card_name
+      .card_description
+        card_description
+      .card_detail
+        = image_tag 'default-avatar.png'
+        .card_detail_img
+          %div
+            %span 23
+            %span 
+              = image_tag 'Shape.png'
+
+  .add_card
+    %p + Add new card
