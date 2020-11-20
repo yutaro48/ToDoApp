@@ -16,4 +16,9 @@
         .dropdown-content
           %a{:href => "#"} Profile
           %a{:href => "#"} Log out
+
+    - if flash.present?
+      .flash
+        - flash.each do |key, value|
+          %div.key= value
     = yield

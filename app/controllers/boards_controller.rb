@@ -15,8 +15,9 @@ class BoardsController < ApplicationController
     def create
         @board = Board.new(board_params)
         if @board.save
-            redirect_to board_path(@board)
+            redirect_to board_path(@board), notice: 'Save successful'
         else
+            flash.now[:error] = 'Could not save'
             render :new
         end
     end
