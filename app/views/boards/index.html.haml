@@ -5,12 +5,13 @@
         .card_top
           %p.card_title 
             = board.name
-          .dropdown
-            = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
-            .dropdown-content
-              = link_to 'Detail', board_path(board)
-              = link_to 'Edit', edit_board_path(board) 
-              = link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもいいですか？' }
+          - if user_signed_in?
+            .dropdown
+              = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
+              .dropdown-content
+                = link_to 'Detail', board_path(board)
+                = link_to 'Edit', edit_board_path(board) 
+                = link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもいいですか？' }
         .card_description
           = board.description
         .card_detail
