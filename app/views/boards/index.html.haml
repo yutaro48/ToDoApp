@@ -1,20 +1,20 @@
 .container
   - @boards.each do |board|
-    = link_to board_path(board) do
-      .card
-        .card_content
-          .card_top
-            %p.card_title 
-              = board.name
-            .dropdown
-              = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
-              .dropdown-content
-                %p Edit
-                %p Delete
-          .card_description
-            = board.description
-          .card_detail
-            = image_tag 'default-avatar.png'
+    .card
+      .card_content
+        .card_top
+          %p.card_title 
+            = board.name
+          .dropdown
+            = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
+            .dropdown-content
+              = link_to 'Detail', board_path(board)
+              = link_to 'Edit', edit_board_path(board) 
+              %p Delete
+        .card_description
+          = board.description
+        .card_detail
+          = image_tag 'default-avatar.png'
 
   = link_to new_board_path do
     .add_card
