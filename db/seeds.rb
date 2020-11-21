@@ -6,8 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do
-    Board.create(
+bbb = User.create!(email: 'bbb@gmail.coma', password: 'bbbbbb')
+ccc = User.create!(email: 'ccc@gmail.coma', password: 'cccccc')
+
+2.times do
+    bbb.boards.create(
+        name: Faker::Lorem.sentence(word_count: 3), 
+        description: Faker::Lorem.sentence(word_count: 20)
+    )
+end
+
+2.times do
+    ccc.boards.create(
         name: Faker::Lorem.sentence(word_count: 3), 
         description: Faker::Lorem.sentence(word_count: 20)
     )

@@ -3,13 +3,13 @@
     .card
       .card_content
         .card_top
-          %p.card_title 
-            = board.name
-          - if user_signed_in?
+          = link_to board_path(board) do
+            %p.card_title
+              = board.name
+          - if user_signed_in? && current_user.has_written?(board)
             .dropdown
               = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
               .dropdown-content
-                = link_to 'Detail', board_path(board)
                 = link_to 'Edit', edit_board_path(board) 
                 = link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもいいですか？' }
         .card_description

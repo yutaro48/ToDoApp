@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-    before_action :set_article, only: [:show, :edit, :update]
+    before_action :set_article, only: [:edit, :update]
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
     def index
@@ -7,14 +7,15 @@ class BoardsController < ApplicationController
     end
 
     def show
+        @board = Board.find(params[:id])
     end
 
     def new
-        @board = Board.new
+        @board = current_user.boards.build
     end
 
     def create
-        @board = Board.new(board_params)
+        @board = current_user.boards.build(board_params)
         if @board.save
             redirect_to board_path(@board), notice: 'Save successful'
         else
@@ -36,7 +37,7 @@ class BoardsController < ApplicationController
     end
 
     def destroy
-        board = Board.find(params[:id])
+        board = current_user.boards.find(params[:id])
         board.destroy!
         redirect_to root_path, notice: 'Delete successful'
     end
@@ -47,7 +48,7 @@ class BoardsController < ApplicationController
     end
 
     def set_article
-        @board = Board.find(params[:id])
+        @board = current_user.boards.find(params[:id])
     end
 
 end
