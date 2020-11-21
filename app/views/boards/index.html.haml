@@ -10,7 +10,7 @@
             .dropdown-content
               = link_to 'Detail', board_path(board)
               = link_to 'Edit', edit_board_path(board) 
-              %p Delete
+              = link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもいいですか？' }
         .card_description
           = board.description
         .card_detail
