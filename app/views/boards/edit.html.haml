@@ -1,0 +1,17 @@
+.container
+  %h2.form_title Edit Board
+  = form_with(model: @board, local: 'true') do |f|
+    %div
+      = f.label :title, 'Name'  
+    %div
+      = f.text_field :name, class: 'text'
+    - if @board.errors.include?(:name)
+      %p.error=@board.errors.full_messages_for(:name).first
+    %div
+      = f.label :description, 'Description'
+    %div
+      = f.text_area :description, class: 'text'
+    - if @board.errors.include?(:description)
+      %p.error=@board.errors.full_messages_for(:description).first
+    %div
+      = f.submit :Submit, class: 'btn-primary' 
