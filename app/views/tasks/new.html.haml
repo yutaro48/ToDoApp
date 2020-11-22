@@ -14,7 +14,7 @@
     - if @task.errors.include?(:description)
       %p.error=@task.errors.full_messages_for(:description).first
     %div
-      = f.label :date, 'Deadline'  
+      = f.label :date, 'Date(Deadline)'  
     %div
       = f.date_field :date, class: 'text'
     - if @task.errors.include?(:date)
