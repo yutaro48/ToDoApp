@@ -1,0 +1,18 @@
+.container
+  .card_show_top
+    .board_title
+      = @task.name
+    .dropdown
+      = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
+      .dropdown-content
+        %a{href: '#'} Edit
+        %a{href: '#'} Delete
+  .top_image
+    = image_tag 'ToDoPhoto.png'
+  .card
+    .card_content
+      .card_description
+        = @task.description
+
+  .add_comment
+    %p + Add new comment
