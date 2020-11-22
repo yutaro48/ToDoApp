@@ -18,5 +18,6 @@
             %span 
               = image_tag 'Shape.png'
 
-  .add_card
-    %p + Add new card
+  = link_to new_board_task_path(@board) do
+    .add_card
+      %p + Add new card

@@ -25,13 +25,13 @@ ActiveRecord::Schema.define(version: 2020_11_22_105524) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.bigint "boards_id", null: false
+    t.bigint "board_id", null: false
     t.string "name", null: false
     t.text "description", null: false
     t.date "deadline", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["boards_id"], name: "index_tasks_on_boards_id"
+    t.index ["board_id"], name: "index_tasks_on_board_id"
   end
 
   create_table "users", force: :cascade do |t|
