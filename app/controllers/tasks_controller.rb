@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
 
     def show
+        @board = Board.find(params[:board_id])
         @task = Task.find(params[:id])
     end
 
@@ -17,6 +18,22 @@ class TasksController < ApplicationController
         else
             flash.now[:error] = 'Could not save'
             render :new
+        end
+    end
+
+    def edit
+        @board = Board.find(params[:board_id])
+        @task = Task.find(params[:id])
+    end
+
+    def update
+        @board = Board.find(params[:board_id])
+        @task = Task.find(params[:id])
+        if @task.update(task_params)
+            redirect_to board_task_path(@board, @task), notice: 'Update successful'
+        else
+            flash.now[:error] = 'Could not update'
+            render :edit
         end
     end
 

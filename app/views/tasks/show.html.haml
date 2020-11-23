@@ -5,7 +5,7 @@
     .dropdown
       = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
       .dropdown-content
-        %a{href: '#'} Edit
+        = link_to 'Edit', edit_board_task_path(@board, @task)
         %a{href: '#'} Delete
   .top_image
     = image_tag 'ToDoPhoto.png'
