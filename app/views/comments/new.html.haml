@@ -5,5 +5,7 @@
       = f.text_area :description, class: 'text'
     - if @task.errors.include?(:description)
       %p.error=@task.errors.full_messages_for(:description).first
+    - if @comment.errors.include?(:description)
+      %p.error=@comment.errors.full_messages_for(:description).first
     %div
       = f.submit :Submit, class: 'btn-primary' 
