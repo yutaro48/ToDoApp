@@ -1,0 +1,9 @@
+.container
+  %h2.form_title New Comment
+  = form_with(model: @comment, url: board_task_comments_path(@board, @task), method: 'post', local: 'true') do |f|
+    %div
+      = f.text_area :description, class: 'text'
+    - if @task.errors.include?(:description)
+      %p.error=@task.errors.full_messages_for(:description).first
+    %div
+      = f.submit :Submit, class: 'btn-primary' 

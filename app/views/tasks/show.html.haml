@@ -14,5 +14,6 @@
       .card_description_show
         = @task.description
 
-  .add_comment
-    %p + Add new comment
+  = link_to new_board_task_comment_path(@board, @task) do
+    .add_comment
+      %p + Add new comment
