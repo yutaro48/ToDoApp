@@ -2,22 +2,23 @@
   .board_title
     = @board.name
   - @tasks.each do |task|
-    .card
-      .card_image
-        = image_tag 'ToDoPhoto.png'
-      .card_content
-        .card_top
-          %p.card_title 
-            = task.name
-        .card_description
-          = task.description
-        .card_detail
-          = image_tag 'default-avatar.png'
-          .card_detail_img
-            %div
-              %span 23
-              %span 
-                = image_tag 'Shape.png'
+    = link_to board_task_path(@board, task) do
+      .card
+        .card_image
+          = image_tag 'ToDoPhoto.png'
+        .card_content
+          .card_top
+            %p.card_title 
+              = task.name
+          .card_description
+            = task.description
+          .card_detail
+            = image_tag 'default-avatar.png'
+            .card_detail_img
+              %div
+                %span 23
+                %span 
+                  = image_tag 'Shape.png'
 
   = link_to new_board_task_path(@board) do
     .add_card

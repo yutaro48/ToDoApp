@@ -1,0 +1,18 @@
+.container
+  .card_show_top
+    .board_title
+      = @task.name
+    .dropdown
+      = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
+      .dropdown-content
+        = link_to 'Edit', edit_board_task_path(@board, @task)
+        = link_to 'Delete', board_task_path(@board, @task), data: { method: 'delete', confirm: '本当に削除してもいいですか？' }
+  .top_image
+    = image_tag 'ToDoPhoto.png'
+  .card
+    .card_content
+      .card_description_show
+        = @task.description
+
+  .add_comment
+    %p + Add new comment

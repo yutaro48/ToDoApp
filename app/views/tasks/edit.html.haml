@@ -1,0 +1,23 @@
+.container
+  %h2.form_title Edit Card
+  = form_with(model: @task, url: board_task_path(@board, @task), local: 'true') do |f|
+    %div
+      = f.label :title, 'Name'  
+    %div
+      = f.text_field :name, class: 'text'
+    - if @task.errors.include?(:name)
+      %p.error=@task.errors.full_messages_for(:name).first
+    %div
+      = f.label :description, 'Description'
+    %div
+      = f.text_area :description, class: 'text'
+    - if @task.errors.include?(:description)
+      %p.error=@task.errors.full_messages_for(:description).first
+    %div
+      = f.label :date, 'Date(Deadline)'  
+    %div
+      = f.date_field :date, class: 'text'
+    - if @task.errors.include?(:date)
+      %p.error=@task.errors.full_messages_for(:date).first
+    %div
+      = f.submit :Submit, class: 'btn-primary' 

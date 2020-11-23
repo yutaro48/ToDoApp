@@ -6,6 +6,7 @@ $avatar-size: 32px;
   font-weight: 800;
   font-size: 26px;
   line-height: 36px;
+  padding-bottom: 5px;
 }
 
 .card {
@@ -36,6 +37,12 @@ $avatar-size: 32px;
     mix-blend-mode: normal;
     opacity: 0.4;
     margin: 10px 0px;
+
+    &_show {
+      font-size: 14px;
+      mix-blend-mode: normal;
+      margin: 10px 0px;
+    }
   }
 
   &_detail {
@@ -62,6 +69,12 @@ $avatar-size: 32px;
         border-radius: 1px;
       }
     }
+  }
+
+  &_show_top {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
   }
 
   &_content {
@@ -100,5 +113,41 @@ $avatar-size: 32px;
 
   p {
     margin-top: 68px;
+  }
+}
+
+.add_comment {
+  background: #FFFFFF;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: $border-radius;
+  height: 57px;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background-color: $primary-color;
+  }
+
+  p {
+    margin-top: 18px;
+    font-size: 14px;
+  }
+}
+
+.top_image {
+  height: 170px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: 32px;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
   }
 }
