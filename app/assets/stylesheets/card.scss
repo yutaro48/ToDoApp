@@ -6,6 +6,7 @@ $avatar-size: 32px;
   font-weight: 800;
   font-size: 26px;
   line-height: 36px;
+  padding-bottom: 5px;
 }
 
 .card {
@@ -36,6 +37,12 @@ $avatar-size: 32px;
     mix-blend-mode: normal;
     opacity: 0.4;
     margin: 10px 0px;
+
+    &_show {
+      font-size: 14px;
+      mix-blend-mode: normal;
+      margin: 10px 0px;
+    }
   }
 
   &_detail {
