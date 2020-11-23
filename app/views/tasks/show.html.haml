@@ -7,8 +7,9 @@
       .dropdown-content
         = link_to 'Edit', edit_board_task_path(@board, @task)
         = link_to 'Delete', board_task_path(@board, @task), data: { method: 'delete', confirm: '本当に削除してもいいですか？' }
-  .top_image
-    = image_tag 'ToDoPhoto.png'
+  -if @task.eyecatch.attached?
+    .top_image
+      = image_tag @task.eyecatch
   .card
     .card_content
       .card_description_show
