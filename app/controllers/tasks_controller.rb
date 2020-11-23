@@ -37,6 +37,13 @@ class TasksController < ApplicationController
         end
     end
 
+    def destroy
+        @board = Board.find(params[:board_id])
+        @task = Task.find(params[:id])
+        @task.destroy!
+        redirect_to board_path(@board), notice: 'Delete successful'
+    end
+
     private
     def task_params
         params.require(:task).permit(:name, :description, :date)

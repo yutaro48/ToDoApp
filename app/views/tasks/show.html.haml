@@ -6,7 +6,7 @@
       = image_tag 'Combined Shape.png', class: 'card_dropdown dropbtn'
       .dropdown-content
         = link_to 'Edit', edit_board_task_path(@board, @task)
-        %a{href: '#'} Delete
+        = link_to 'Delete', board_task_path(@board, @task), data: { method: 'delete', confirm: '本当に削除してもいいですか？' }
   .top_image
     = image_tag 'ToDoPhoto.png'
   .card
