@@ -97,6 +97,10 @@ $avatar-size: 32px;
       width: 100%;
     }
   }
+
+  &_date {
+    display: flex;
+  }
 }
 
 .add_card {

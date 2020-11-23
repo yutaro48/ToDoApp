@@ -7,6 +7,9 @@
       .dropdown-content
         = link_to 'Edit', edit_board_task_path(@board, @task)
         = link_to 'Delete', board_task_path(@board, @task), data: { method: 'delete', confirm: '本当に削除してもいいですか？' }
+  .card_date
+    %p deadline :  
+    %p= @task.date
   -if @task.eyecatch.attached?
     .top_image
       = image_tag @task.eyecatch
