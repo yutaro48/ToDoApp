@@ -13,6 +13,13 @@
     .card_content
       .card_description_show
         = @task.description
+  
+  .task
+    %h2 Comment
+    - @comments.each do |comment|
+      .task_comment
+        %p= comment.description
 
-  .add_comment
-    %p + Add new comment
+  = link_to new_board_task_comment_path(@board, @task) do
+    .add_comment
+      %p + Add new comment
