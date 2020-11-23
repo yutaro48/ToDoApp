@@ -1,0 +1,17 @@
+@import 'variables';
+
+.task {
+    h2 {
+        font-weight: 400;
+        font-size: 26px;
+    }
+
+    &_comment {
+        width: 100%;
+        margin: 8px 0px;
+        padding: 9px 8px;
+        border: none;
+        background: $primary-color;
+        border-radius: $border-radius;
+    }
+}
